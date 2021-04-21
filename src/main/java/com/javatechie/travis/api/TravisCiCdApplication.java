@@ -9,13 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TravisCiCdApplication {
 
-	@GetMapping("/hello")
+	@GetMapping("/")
 	public String welcome(){
-		return "welcome to javatechie";
+		return "create by KirayKor";
+	}
+
+	@GetMapping("/laba")
+	public String laba(){
+		return "toDo: - запилить форму ввода";
 	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(TravisCiCdApplication.class, args);
 	}
-
 }
