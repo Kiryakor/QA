@@ -2,22 +2,13 @@ package com.javatechie.travis.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@RestController
+@ServletComponentScan
 public class TravisCiCdApplication {
-
-	@GetMapping("/")
-	public String welcome(){
-		return "create by KirayKor";
-	}
-
-	@GetMapping("/laba")
-	public String laba(){
-		return "toDo: - запилить форму ввода";
-	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(TravisCiCdApplication.class, args);
