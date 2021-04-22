@@ -1,26 +1,21 @@
 package com.javatechie.travis.api;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.LinkedList;
 
 @Service
 public class UserHistoryServiceImp implements UserHistoryService {
 
-    @Autowired
-    private UserHistoryRepository userHistoryRepository;
+    LinkedList<UserHistory> userHistory = new LinkedList<>();
 
     @Override
     public Iterable<UserHistory> listAll() {
-        return userHistoryRepository.findAll();
+        return userHistory;
     }
 
     @Override
-    public UserHistory add(String answer, String request) {
-        return userHistoryRepository.save(new UserHistory(answer,request));
-    }
-
-    @Override
-    public void delete(Integer id) {
-        userHistoryRepository.deleteById(id);
+    public void add(String answer, String request) {
+        userHistory.add(new UserHistory(answer,request));
     }
 }

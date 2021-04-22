@@ -4,8 +4,5 @@ public interface UserHistoryService {
 
     Iterable<UserHistory> listAll();
 
-    UserHistory add(String answer, String request);
-
-    void delete(Integer id);
-
+    void add(String answer, String request);
 }

@@ -19,14 +19,9 @@ public class UserHistoryRestService {
         return ResponseEntity.ok(userHistoryService.listAll());
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable("id") Integer id) {
-        userHistoryService.delete(id);
-    }
-
     @RequestMapping(value = "/{answer}/{request}", method = RequestMethod.POST)
-    public ResponseEntity<Object> add(@PathVariable("answer") String answer,
+    public void add(@PathVariable("answer") String answer,
                                       @PathVariable("request") String request) {
-        return ResponseEntity.ok(userHistoryService.add(answer, request));
+         userHistoryService.add(answer, request);
     }
 }
