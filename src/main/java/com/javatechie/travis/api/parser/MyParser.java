@@ -1,4 +1,4 @@
-package com.javatechie.travis.api;
+package com.javatechie.travis.api.parser;
 
 import java.util.LinkedList;
 

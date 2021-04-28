@@ -1,4 +1,4 @@
-package com.javatechie.travis.api;
+package com.javatechie.travis.api.userHistory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,9 +19,8 @@ public class UserHistoryRestService {
         return ResponseEntity.ok(userHistoryService.listAll());
     }
 
-    @RequestMapping(value = "/{answer}/{request}", method = RequestMethod.POST)
-    public void add(@PathVariable("answer") String answer,
-                                      @PathVariable("request") String request) {
-         userHistoryService.add(answer, request);
+    @RequestMapping(value = "/{answer}", method = RequestMethod.POST)
+    public ResponseEntity<Object> add(@PathVariable("answer") String answer) {
+        return ResponseEntity.ok(userHistoryService.add(answer));
     }
 }

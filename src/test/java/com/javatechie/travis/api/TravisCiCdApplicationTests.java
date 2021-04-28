@@ -1,5 +1,6 @@
 package com.javatechie.travis.api;
 
+import com.javatechie.travis.api.parser.MyParser;
 import org.junit.Assert;
 
 class TravisCiCdApplicationTests {

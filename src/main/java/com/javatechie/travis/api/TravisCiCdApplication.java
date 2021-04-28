@@ -1,16 +1,16 @@
 package com.javatechie.travis.api;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.ServletComponentScan;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
-@ServletComponentScan
+@ComponentScan
+@EnableAutoConfiguration
 public class TravisCiCdApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TravisCiCdApplication.class, args);
+		SpringApplication app = new SpringApplicationBuilder(TravisCiCdApplication.class).build();
+		app.run(args);
 	}
 }
