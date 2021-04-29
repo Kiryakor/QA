@@ -1,6 +1,5 @@
-package newTests;
+package com.javatechie.travis.api.newTests;
 
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,7 +10,7 @@ public class UserHistoryServiceTests {
 
     WebDriver driver = new ChromeDriver();
 
-    @Test
+    @org.junit.jupiter.api.Test
     public void simpleTest() {
         driver.navigate().to("http://localhost:8080");
 
