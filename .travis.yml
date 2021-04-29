@@ -2,7 +2,7 @@ language: java
 jdk:
   - openjdk8
 before_script:
-  - chromedriver-update 73.0.3683.68
+  - bundle exec rails runner "Webdrivers::Chromedriver.update"
 addons:
   chrome: stable
 script: ./mvnw clean install
