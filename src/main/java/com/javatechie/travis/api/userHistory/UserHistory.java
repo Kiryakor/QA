@@ -3,7 +3,6 @@ package com.javatechie.travis.api.userHistory;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "UserHistory")

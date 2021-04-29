@@ -1,4 +1,4 @@
-package com.javatechie.travis.api;
+package com.javatechie.travis.api.oldTests;
 
 import com.javatechie.travis.api.parser.MyParser;
 import org.junit.Assert;
