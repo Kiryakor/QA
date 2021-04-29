@@ -30,7 +30,26 @@ public class UserHistoryServiceTests {
     }
 
     @Test
-    public void test() {
+    public void test5() {
+        driver.get("http://localhost:8080/userhistory");
+    }
+
+    @Test
+    public void test4() {
+        driver.get("http://localhost:8080/userhistory");
+    }
+
+    @Test
+    public void test3() {
+        driver.get("http://localhost:8080/userhistory");
+    }
+    @Test
+    public void test2() {
+        driver.get("http://localhost:8080/userhistory");
+    }
+
+    @Test
+    public void test1() {
         driver.get("http://localhost:8080/userhistory");
     }
 }
