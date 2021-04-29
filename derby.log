@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Wed Apr 28 18:46:13 MSK 2021:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0179-1928-c663-000002f926b0 
+Thu Apr 29 15:21:40 MSK 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0179-1d93-d76a-0000033db0a0 
 on database directory memory:/Users/kirill/Desktop/QA/demo with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@7ad041f3 
 Loaded from file:/Users/kirill/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
