@@ -25,6 +25,34 @@ before_install:
   - echo $TRAVIS_BUILD_NUMBER
   - echo $TRAVIS_REPO_SLUG
 
+matrix:
+  include:
+    - name: "Chrome Stable"
+      env: BROWSER=chrome
+      addons:
+        chrome: stable
+    - name: "Firefox Stable"
+      env: BROWSER=firefox
+      addons:
+        firefox: latest
+  allow_failures:
+    - name: "Chrome Beta"
+      env: BROWSER=chrome
+      addons:
+        chrome: beta
+    - name: "Firefox Beta"
+      env: BROWSER=firefox
+      addons:
+        firefox: latest-beta
+#  - name: "Safari"
+#    env: BROWSER=safari
+#  - name: "Firefox ESR"
+#    env: BROWSER=firefox
+#    addons:
+#      firefox: latest-esr
+
+
+
 cache:
   directories:
     - $HOME/.m2

@@ -4,16 +4,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UserHistoryServiceTests {
 
-    WebDriver driver = new ChromeDriver();
-
     @org.junit.jupiter.api.Test
     public void simpleTest() {
+        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+        capabilities.setCapability("marionette", true);
+        WebDriver driver = new RemoteWebDriver(capabilities);
+
         driver.navigate().to("http://localhost:8080/userHistory");
 
 //        driver.findElement(By.name("href")).sendKeys("5+6");
