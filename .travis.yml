@@ -2,19 +2,37 @@ language: java
 jdk:
   - openjdk8
 
-sudo: required
-dist: trusty
 addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+  chrome: stable
 
-before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - npm i -g npm@^3
-  - sleep 3
+before_install:
+  - pwd
+  # - chmod 777 ./src/test/resources/drivers/chromedriver.exe
+  # - chmod 777 ./target/test-classes/drivers/chromedriver.exe
+  - wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+  #- wget https://chromedriver.storage.googleapis.com/79.0.3945.16/chromedriver_linux64.zip
+  # https://chromedriver.storage.googleapis.com/79.0.3945.16/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip
+  # - chmod 777 /home/travis/build/pavelgloss/seleniumexample/chromedriver
+  - "ls -la"
+  # - wget https://selenium-release.storage.googleapis.com/3.13/selenium-server-standalone-3.13.0.jar
+  # start your web application and listen on `localhost`
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+  #  - xvfb-run java -Dwebdriver.chrome.driver=/home/travis/build/pavelgloss/seleniumexample/chromedriver -jar selenium-server-standalone-3.13.0.jar
+  - echo $TRAVIS_COMMIT
+  - echo $TRAVIS_TAG
+  - echo $TRAVIS_BRANCH
+  - echo $TRAVIS_BUILD_NUMBER
+  - echo $TRAVIS_REPO_SLUG
 
-script: ./mvnw clean install
+cache:
+  directories:
+    - $HOME/.m2
+
+install: true
+
+script:
+  - "mvn verify"
+
+
+#script: ./mvnw clean install
