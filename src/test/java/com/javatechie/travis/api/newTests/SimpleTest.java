@@ -1,31 +1,40 @@
 package com.javatechie.travis.api.newTests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
+import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SimpleTest {
 
-    private WebDriver driver;
+    public static String URL;
+    public static WebDriver driver;
+
+    @BeforeClass
+    public static void setUpClass() {
+    }
+
+    @AfterClass
+    public static void tearDownClass() {
+        driver.quit();
+    }
 
     @Before
-    public void setupTest() {
+    public void setUp() {
+        URL = "https://mern-crud.herokuapp.com/";
+        //travis
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         driver = new ChromeDriver();
     }
 
     @After
-    public void teardown() {
-        if (driver != null) {
-            driver.quit();
-        }
+    public void tearDown() {
+        driver.close();
     }
 
     @Test
-    public void test() {
-        // Test logic
+    public void testA_addSuccesss(){
     }
 }
