@@ -3,13 +3,14 @@ package com.javatechie.travis.api.newTests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UserHistoryServiceTests {
 
-    WebDriver driver = new SafariDriver();
+    WebDriver driver = new ChromeDriver();
 
     @org.junit.jupiter.api.Test
     public void simpleTest() {
