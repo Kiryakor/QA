@@ -1,29 +1,36 @@
 package com.javatechie.travis.api.newTests;
 
-import org.openqa.selenium.By;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.safari.SafariDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UserHistoryServiceTests {
 
-    @org.junit.jupiter.api.Test
-    public void simpleTest() {
-        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-        capabilities.setCapability("marionette", true);
-        WebDriver driver = new RemoteWebDriver(capabilities);
+    private WebDriver driver;
 
-        driver.navigate().to("http://localhost:8080/userHistory");
-
-//        driver.findElement(By.name("href")).sendKeys("5+6");
-//        driver.findElement(By.name("button")).click();
-//        (new WebDriverWait(driver,10)).until((ExpectedCondition<Boolean>) (WebDriver d) ->
-//                d.getPageSource().contains("Ответ: 11"));
+    @BeforeClass
+    public static void setupClass() {
+        WebDriverManager.chromedriver().setup();
     }
 
+    @Before
+    public void setupTest() {
+        driver = new ChromeDriver();
+    }
+
+    @After
+    public void teardown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+    @Test
+    public void test() {
+        driver.get("http://localhost:8080/userhistory");
+    }
 }
