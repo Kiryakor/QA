@@ -1,14 +1,19 @@
 package com.javatechie.travis.api.newTests;
 
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class InitialTest {
-    @Test
-    public void openURL() {
-        final ChromeDriver chromeDriver = new ChromeDriver();
-        chromeDriver.get("http://localhost:8080");
-        chromeDriver.quit();
+
+    private WebDriver driver;
+
+    @Test ()
+    public void test() {
+        driver = new ChromeDriver();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
+
