@@ -8,7 +8,7 @@ public class InitialTest {
     @Test
     public void openURL() {
         final ChromeDriver chromeDriver = new ChromeDriver();
-        chromeDriver.get("https://octopus.com/");
+        chromeDriver.get("http://localhost:8080");
         chromeDriver.quit();
     }
 }
