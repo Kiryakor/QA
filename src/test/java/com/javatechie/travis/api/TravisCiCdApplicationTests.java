@@ -2,6 +2,8 @@ package com.javatechie.travis.api;
 
 import com.javatechie.travis.api.parser.MyParser;
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 class TravisCiCdApplicationTests {
 
@@ -39,5 +41,12 @@ class TravisCiCdApplicationTests {
     void action_6(){
         String line = MyParser.action("-5+2");
         Assert.assertEquals("Не вырные входные данные",line);
+    }
+
+    @org.junit.jupiter.api.Test
+    void test3old() {
+        System.setProperty("webdriver.chrome.driver", "chromedriver");
+        WebDriver driver = new ChromeDriver();
+        driver.quit();
     }
 }
