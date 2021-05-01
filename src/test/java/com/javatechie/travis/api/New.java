@@ -12,4 +12,18 @@ public class New {
         WebDriver driver = new ChromeDriver();
         driver.quit();
     }
+
+    @Test
+    public void test2() {
+        System.setProperty("webdriver.chrome.driver", "chromedriver");
+        WebDriver driver = new ChromeDriver();
+        driver.quit();
+    }
+
+    @Test
+    public void test3() {
+        System.setProperty("webdriver.chrome.driver", "chromedriver");
+        WebDriver driver = new ChromeDriver();
+        driver.quit();
+    }
 }
