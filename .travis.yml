@@ -1,6 +1,9 @@
 sudo: required
 dist: trusty
 language: java
+addons:
+  chrome: stable
+  firefox: latest
 jdk:
   - openjdk8
 script: ./mvnw clean install
