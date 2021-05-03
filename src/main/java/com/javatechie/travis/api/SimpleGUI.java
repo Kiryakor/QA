@@ -32,7 +32,7 @@ public class SimpleGUI extends JFrame {
         container.setLayout(new GridLayout(3,2,2,2));
         container.add(input);
 
-        label.setName("anserLabel");
+        label.setName("anwerLabel");
         container.add(label);
 
         Object[] columnsHeader = new String[] {"Наименование", "Ед.измерения"};
@@ -40,6 +40,7 @@ public class SimpleGUI extends JFrame {
         tableModel.setColumnIdentifiers(columnsHeader);
         table = new JTable(tableModel);
         table.setName("table");
+        prepareData();
         container.add(table);
 
         button.setName("actionButton");
@@ -62,7 +63,7 @@ public class SimpleGUI extends JFrame {
         }
     }
 
-    void prepareData() {
+    public void prepareData() {
         try {
             Iterable<UserHistory> data = userHistoryService.listAll();
             for (UserHistory t : data) {
@@ -70,12 +71,12 @@ public class SimpleGUI extends JFrame {
                 tableModel.addRow(columnsHeader);
             }
         } catch (Exception e) {
+            System.out.println(e.getLocalizedMessage());
         }
     }
 
     public static void main(String[] args) {
         SimpleGUI app = new SimpleGUI();
-        app.prepareData();
         app.setVisible(true);
     }
 }
