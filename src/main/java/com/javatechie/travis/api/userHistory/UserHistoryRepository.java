@@ -9,9 +9,9 @@ import java.util.List;
 
 public class UserHistoryRepository {
 
-    private String path = "file.txt";
+    public String path = "file.txt";
 
-    Iterable<UserHistory> findAll() {
+    public Iterable<UserHistory> findAll() {
         LinkedList<UserHistory> userHistoriesList = new LinkedList<UserHistory>();
         List<String> data;
 
@@ -26,7 +26,7 @@ public class UserHistoryRepository {
         return userHistoriesList;
     }
 
-    UserHistory save(UserHistory userHistory){
+    public UserHistory save(UserHistory userHistory){
         try {
             write(userHistory);
         } catch (IOException e) {
@@ -35,7 +35,7 @@ public class UserHistoryRepository {
         return userHistory;
     }
 
-    public void write(UserHistory userHistory) throws IOException {
+    private void write(UserHistory userHistory) throws IOException {
         try {
             List<String> readData = readFile();
             readData.add(userHistory.getAnswer() + "\t" + userHistory.getRequest());
@@ -43,7 +43,7 @@ public class UserHistoryRepository {
             BufferedWriter writer = new BufferedWriter(new FileWriter(path));
             for(String str : readData) {
                 writer.write(str);
-                writer.write(System.getProperty( "line.separator" ));
+                writer.write(System.getProperty("line.separator"));
             }
 
             writer.close();
