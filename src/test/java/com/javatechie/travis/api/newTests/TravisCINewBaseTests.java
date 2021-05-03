@@ -5,7 +5,7 @@ import org.assertj.swing.edt.GuiActionRunner;
 import org.assertj.swing.fixture.FrameFixture;
 import org.junit.Assert;
 
-class TravisCINewTests {
+class TravisCINewBaseTests {
 
     @org.junit.jupiter.api.Test
     void simpleTest() {
