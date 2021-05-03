@@ -4,8 +4,6 @@ import com.javatechie.travis.api.parser.MyParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedList;
-
 @Service
 public class UserHistoryServiceImp implements UserHistoryService {
 
