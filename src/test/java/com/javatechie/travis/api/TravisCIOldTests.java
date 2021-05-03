@@ -3,7 +3,7 @@ package com.javatechie.travis.api;
 import com.javatechie.travis.api.parser.MyParser;
 import org.junit.Assert;
 
-class TravisCiCdApplicationTests {
+class TravisCIOldTests {
 
     @org.junit.jupiter.api.Test
     void action_1(){
