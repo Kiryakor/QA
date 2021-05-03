@@ -62,5 +62,4 @@ public class TravisCINewUserHistoryRepositoryTests {
         } catch (IOException e) {
         }
     }
-
 }
