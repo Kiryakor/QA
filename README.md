@@ -12,3 +12,7 @@
 *   ⏳  Создать отчет по курсовому проектированию.
 
 [Ссылка на ТЗ](https://github.com/Kiryakor/QA/blob/main/Методические%20указани%20я%20для%20выполнения%20КП%202021.pdf)
+
+
+## Демонстрация работы программы
+![gif file](https://github.com/Kiryakor/QA/blob/main/showProgramm.mov)
