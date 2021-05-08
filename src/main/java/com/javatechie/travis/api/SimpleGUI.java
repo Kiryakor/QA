@@ -24,12 +24,12 @@ public class SimpleGUI extends JFrame {
     UserHistoryServiceImp userHistoryService = new UserHistoryServiceImp();
 
     public SimpleGUI() {
-        super("Simple Example");
-        this.setBounds(100,100,250,100);
+        super("QA");
+        this.setBounds(100,100,250,600);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Container container = this.getContentPane();
-        container.setLayout(new GridLayout(3,2,2,2));
+        container.setLayout(new GridLayout(4,1));
         container.add(input);
 
         label.setName("anwerLabel");
